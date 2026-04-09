@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const UsersPage = async () => {
@@ -20,7 +21,9 @@ const UsersPage = async () => {
               <p>Phone: {user.phone}</p>
 
               <div className="card-actions justify-end">
-                <button className="btn">Details</button>
+                <Link href={`/users/${user.id}`} className="btn">
+                  Details
+                </Link>
               </div>
             </div>
           </div>
