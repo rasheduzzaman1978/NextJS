@@ -1,18 +1,24 @@
+'use client';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React from 'react';
 
 const Navbar = () => {
 
+  const pathName = usePathname();
+  console.log('path name in the navbar:', pathName);
+
     const links = 
     <>
-    <li><Link href='/about'>About</Link></li>
-    <li><Link href='/about/developers'>Developer</Link></li>
-    <li><Link href='/about/designer'>Designer</Link></li>
-    <li><Link href='/services'>Services</Link></li>
-    <li><Link href='/contact'>Contact</Link></li>
-    <li><Link href='/blogs'>Blogs</Link></li>
-    <li><Link href='/dashboard'>Dashboard</Link></li>
-    <li><Link href='/users'>Users</Link></li>
+    <li><Link className={pathName === '/' ? 'text-blue-400 border border-blue-500' : ''} href='/'>Home</Link></li>
+    <li><Link className={pathName === '/about' ? 'text-blue-400 border border-blue-500' : ''} href='/about'>About</Link></li>
+    <li><Link className={pathName === '/about/developers' ? 'text-blue-400 border border-blue-500' : ''} href='/about/developers'>Developer</Link></li>
+    <li><Link className={pathName === '/about/designer' ? 'text-blue-400 border border-blue-500' : ''} href='/about/designer'>Designer</Link></li>
+    <li><Link className={pathName === '/services' ? 'text-blue-400 border border-blue-500' : ''} href='/services'>Services</Link></li>
+    <li><Link className={pathName === '/contact' ? 'text-blue-400 border border-blue-500' : ''} href='/contact'>Contact</Link></li>
+    <li><Link className={pathName === '/blogs' ? 'text-blue-400 border border-blue-500' : ''} href='/blogs'>Blogs</Link></li>
+    <li><Link className={pathName === '/dashboard' ? 'text-blue-400 border border-blue-500' : ''} href='/dashboard'>Dashboard</Link></li>
+    <li><Link className={pathName === '/users' ? 'text-blue-400 border border-blue-500' : ''} href='/users'>Users</Link></li>
     
     </>
     
@@ -33,7 +39,7 @@ const Navbar = () => {
     <Link href='/' className="btn btn-ghost text-xl">daisyUI</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
+    <ul className="menu menu-horizontal px-1 gap-2">
       {links}
           
     </ul>
