@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-zinc-100 via-white to-zinc-200 px-6 py-12 dark:from-zinc-950 dark:via-black dark:to-zinc-900">
-      <main className="w-full max-w-5xl overflow-hidden rounded-3xl bg-white shadow-2xl dark:bg-zinc-900">
+      <main className="w-full max-w-6xl overflow-hidden rounded-3xl bg-white shadow-2xl dark:bg-zinc-900">
         <div className="grid items-center gap-10 p-10 md:grid-cols-2 md:p-16">
           <div className="space-y-6">
             <span className="inline-flex items-center rounded-full bg-zinc-100 px-4 py-1 text-sm font-medium text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">

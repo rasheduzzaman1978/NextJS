@@ -1,14 +1,18 @@
+
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import { Poppins } from "next/font/google";
 
+// Importing Google Font
 const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
 });
 
+// Main Blogs Page Component
 const BlogsPage = () => {
+  // Blog data list
   const blogs = [
     {
       id: 1,
@@ -57,10 +61,12 @@ const BlogsPage = () => {
   ];
 
   return (
+    // Main section with background gradient and custom font
     <section
       className={`min-h-screen bg-gradient-to-br from-zinc-100 via-white to-zinc-200 px-6 py-12 dark:from-zinc-950 dark:via-black dark:to-zinc-900 ${poppins.className}`}
     >
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-6xl">
+        {/* Page Header Section */}
         <div className="text-center">
           <span className="rounded-full bg-zinc-200 px-4 py-1 text-sm font-medium text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">
             Latest Articles
@@ -76,12 +82,14 @@ const BlogsPage = () => {
           </p>
         </div>
 
+        {/* Blog Cards Grid Section */}
         <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {blogs.map((blog) => (
             <div
               key={blog.id}
               className="overflow-hidden rounded-3xl bg-white shadow-xl transition hover:-translate-y-2 hover:shadow-2xl dark:bg-zinc-900"
             >
+              {/* Blog Image Section */}
               <div className="relative h-52 w-full">
                 <Image
                   src={blog.image}
@@ -91,24 +99,30 @@ const BlogsPage = () => {
                 />
               </div>
 
+              {/* Blog Content Section */}
               <div className="p-6">
+                {/* Blog Category and Date */}
                 <div className="flex items-center justify-between text-sm text-zinc-500 dark:text-zinc-400">
                   <span>{blog.category}</span>
                   <span>{blog.date}</span>
                 </div>
 
+                {/* Blog Title */}
                 <h2 className="mt-3 text-xl font-bold text-zinc-900 dark:text-white">
                   {blog.title}
                 </h2>
 
+                {/* Blog Author */}
                 <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
                   By {blog.author}
                 </p>
 
+                {/* Blog Description */}
                 <p className="mt-4 text-zinc-600 dark:text-zinc-400">
                   {blog.description}
                 </p>
 
+                {/* Read More Button */}
                 <Link
                   href={`/blogs/${blog.id}`}
                   className="mt-6 inline-block rounded-xl bg-black px-5 py-3 text-sm font-semibold text-white transition hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
@@ -125,3 +139,4 @@ const BlogsPage = () => {
 };
 
 export default BlogsPage;
+

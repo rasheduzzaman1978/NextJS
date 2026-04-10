@@ -1,6 +1,9 @@
+
 import React from "react";
 
+// Main Designer Page Component
 const DesignerPage = () => {
+  // Designer information list
   const designers = [
     {
       name: "Emma Watson",
@@ -20,8 +23,10 @@ const DesignerPage = () => {
   ];
 
   return (
+    // Full page section with gradient background
     <section className="min-h-screen bg-gradient-to-br from-pink-100 via-white to-purple-100 px-6 py-12 dark:from-zinc-950 dark:via-black dark:to-zinc-900">
       <div className="mx-auto max-w-6xl">
+        {/* Page Heading Section */}
         <div className="text-center">
           <span className="rounded-full bg-pink-200 px-4 py-1 text-sm font-medium text-pink-700 dark:bg-zinc-800 dark:text-zinc-300">
             Creative Team
@@ -37,22 +42,27 @@ const DesignerPage = () => {
           </p>
         </div>
 
+        {/* Designer Cards Section */}
         <div className="mt-12 grid gap-8 md:grid-cols-3">
           {designers.map((designer, index) => (
             <div
               key={index}
               className="rounded-3xl bg-white p-8 text-center shadow-xl transition hover:-translate-y-2 hover:shadow-2xl dark:bg-zinc-900"
             >
+              {/* Designer Icon */}
               <div className="text-6xl">{designer.icon}</div>
 
+              {/* Designer Name */}
               <h2 className="mt-4 text-2xl font-bold text-zinc-900 dark:text-white">
                 {designer.name}
               </h2>
 
+              {/* Designer Role */}
               <p className="mt-2 text-zinc-600 dark:text-zinc-400">
                 {designer.role}
               </p>
 
+              {/* Portfolio Button */}
               <button className="mt-6 rounded-xl bg-pink-500 px-5 py-2 text-sm font-semibold text-white transition hover:bg-pink-600 dark:bg-white dark:text-black dark:hover:bg-zinc-200">
                 View Portfolio
               </button>
@@ -65,3 +75,4 @@ const DesignerPage = () => {
 };
 
 export default DesignerPage;
+

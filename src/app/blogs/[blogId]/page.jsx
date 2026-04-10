@@ -1,6 +1,8 @@
+
 import Image from "next/image";
 import React from "react";
 
+// Blog data list
 const blogs = [
   {
     id: 1,
@@ -48,16 +50,22 @@ const blogs = [
   },
 ];
 
+// Main Blog Detail Page Component
 const BlogDetailPage = async ({ params }) => {
+  // Extract blogId from route params
   const { blogId } = await params;
 
+  // Find the selected blog by matching the ID
   const blog = blogs.find((blog) => blog.id === parseInt(blogId));
 
   return (
+    // Main section with gradient background
     <section className="min-h-screen bg-gradient-to-br from-zinc-100 via-white to-zinc-200 px-6 py-12 dark:from-zinc-950 dark:via-black dark:to-zinc-900">
       <div className="mx-auto max-w-4xl">
         {blog ? (
+          // Blog detail card
           <div className="overflow-hidden rounded-3xl bg-white shadow-2xl dark:bg-zinc-900">
+            {/* Blog Cover Image */}
             <div className="relative h-[350px] w-full">
               <Image
                 src={blog.image}
@@ -67,7 +75,9 @@ const BlogDetailPage = async ({ params }) => {
               />
             </div>
 
+            {/* Blog Content Section */}
             <div className="p-8 md:p-10">
+              {/* Blog Category and Date */}
               <div className="flex flex-wrap items-center gap-3 text-sm">
                 <span className="rounded-full bg-blue-100 px-4 py-1 font-medium text-blue-600">
                   {blog.category}
@@ -78,14 +88,17 @@ const BlogDetailPage = async ({ params }) => {
                 </span>
               </div>
 
+              {/* Blog Title */}
               <h1 className="mt-5 text-4xl font-extrabold text-zinc-900 dark:text-white">
                 {blog.title}
               </h1>
 
+              {/* Blog Author */}
               <p className="mt-3 text-lg text-zinc-600 dark:text-zinc-400">
                 By {blog.author}
               </p>
 
+              {/* Blog Description Box */}
               <div className="mt-8 rounded-2xl bg-zinc-100 p-6 dark:bg-zinc-800">
                 <p className="text-lg leading-8 text-zinc-700 dark:text-zinc-300">
                   {blog.description}
@@ -94,6 +107,7 @@ const BlogDetailPage = async ({ params }) => {
             </div>
           </div>
         ) : (
+          // Fallback UI when blog is not found
           <div className="rounded-3xl bg-white p-10 text-center shadow-xl dark:bg-zinc-900">
             <h2 className="text-3xl font-bold text-red-500">
               Blog Not Found
@@ -110,3 +124,4 @@ const BlogDetailPage = async ({ params }) => {
 };
 
 export default BlogDetailPage;
+

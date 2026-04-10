@@ -1,6 +1,9 @@
+
 import React from "react";
 
+// Main Developers Page Component
 const DevelopersPage = () => {
+  // Developer information list
   const developers = [
     {
       name: "John Doe",
@@ -20,8 +23,10 @@ const DevelopersPage = () => {
   ];
 
   return (
+    // Full page section with gradient background
     <section className="min-h-screen bg-gradient-to-br from-zinc-100 via-white to-zinc-200 px-6 py-12 dark:from-zinc-950 dark:via-black dark:to-zinc-900">
       <div className="mx-auto max-w-6xl">
+        {/* Page Header Section */}
         <div className="text-center">
           <span className="rounded-full bg-zinc-200 px-4 py-1 text-sm font-medium text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">
             Our Team
@@ -37,22 +42,27 @@ const DevelopersPage = () => {
           </p>
         </div>
 
+        {/* Developers Card Grid */}
         <div className="mt-12 grid gap-8 md:grid-cols-3">
           {developers.map((developer, index) => (
             <div
               key={index}
               className="rounded-3xl bg-white p-8 text-center shadow-xl transition hover:-translate-y-2 hover:shadow-2xl dark:bg-zinc-900"
             >
+              {/* Developer Emoji/Image */}
               <div className="text-6xl">{developer.image}</div>
 
+              {/* Developer Name */}
               <h2 className="mt-4 text-2xl font-bold text-zinc-900 dark:text-white">
                 {developer.name}
               </h2>
 
+              {/* Developer Role */}
               <p className="mt-2 text-zinc-600 dark:text-zinc-400">
                 {developer.role}
               </p>
 
+              {/* Profile Button */}
               <button className="mt-6 rounded-xl bg-black px-5 py-2 text-sm font-semibold text-white transition hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200">
                 View Profile
               </button>
@@ -65,3 +75,4 @@ const DevelopersPage = () => {
 };
 
 export default DevelopersPage;
+
