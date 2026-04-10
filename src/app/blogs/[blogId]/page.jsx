@@ -99,7 +99,7 @@ const BlogDetailPage = async ({ params }) => {
               </p>
 
               {/* Blog Description Box */}
-              <div className="mt-8 rounded-2xl bg-zinc-100 p-6 dark:bg-zinc-800">
+              <div className="mt-8 rounded-2xl bg-zinc-100 dark:bg-zinc-800">
                 <p className="text-lg leading-8 text-zinc-700 dark:text-zinc-300">
                   {blog.description}
                 </p>

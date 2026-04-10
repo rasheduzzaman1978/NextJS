@@ -22,7 +22,7 @@ const ContactPage = () => {
             </h1>
 
             {/* Introductory text */}
-            <p className="mt-4 text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+            <p className="mt-4 text-lg leading-8 text-justify text-zinc-600 dark:text-zinc-400">
               Have any questions, suggestions, or feedback? We would love to
               hear from you. Fill out the form and our team will get back to
               you as soon as possible.
