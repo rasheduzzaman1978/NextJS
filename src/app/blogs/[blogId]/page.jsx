@@ -1,15 +1,17 @@
-import React from 'react';
+import Image from "next/image";
+import React from "react";
 
-  const blogs = [
+const blogs = [
   {
     id: 1,
     title: "Understanding React Hooks",
     author: "John Doe",
     date: "2026-04-01",
     category: "React",
-    image: "https://i.ibb.co/example/react-hooks.jpg",
+    image:
+      "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=1200",
     description:
-      "Learn the basics of React Hooks like useState, useEffect, and how they simplify functional components."
+      "Learn the basics of React Hooks like useState, useEffect, and how they simplify functional components.",
   },
   {
     id: 2,
@@ -17,9 +19,10 @@ import React from 'react';
     author: "Sarah Smith",
     date: "2026-03-28",
     category: "CSS",
-    image: "https://i.ibb.co/example/tailwind.jpg",
+    image:
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200",
     description:
-      "A beginner-friendly guide to using Tailwind CSS for building modern and responsive user interfaces."
+      "A beginner-friendly guide to using Tailwind CSS for building modern and responsive user interfaces.",
   },
   {
     id: 3,
@@ -27,9 +30,10 @@ import React from 'react';
     author: "Michael Lee",
     date: "2026-03-20",
     category: "JavaScript",
-    image: "https://i.ibb.co/example/es6.jpg",
+    image:
+      "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=1200",
     description:
-      "Explore important ES6 features such as arrow functions, destructuring, template literals, and modules."
+      "Explore important ES6 features such as arrow functions, destructuring, template literals, and modules.",
   },
   {
     id: 4,
@@ -37,39 +41,72 @@ import React from 'react';
     author: "Emily Johnson",
     date: "2026-03-15",
     category: "Frontend",
-    image: "https://i.ibb.co/example/navbar.jpg",
+    image:
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200",
     description:
-      "Step-by-step tutorial on creating a fully responsive navigation bar using React and Tailwind CSS."
-  }
+      "Step-by-step tutorial on creating a fully responsive navigation bar using React and Tailwind CSS.",
+  },
 ];
 
-const BlogDetailPage = async({params}) => {
-    const {blogId} = await params;
+const BlogDetailPage = async ({ params }) => {
+  const { blogId } = await params;
 
-    const blog = blogs.find(blog => blog.id === parseInt(blogId));
-    console.log('show me params:', blog);
+  const blog = blogs.find((blog) => blog.id === parseInt(blogId));
 
-    return (
-        <div>
-            <h4 className='text-3xl'>Blog Detail Page</h4>
-            {
-                blog ? (
-                    <div className="blog-detail">
-                        <h2 className='text-2xl font-bold text-red-500'>{blog.title}</h2>
-                        <p className='text-gray-600'>{blog.description}</p>
-                        <p className='text-sm text-gray-500'>Author: {blog.author}</p>
-                        <p className='text-sm text-gray-500'>Date: {blog.date}</p>
-                        <p className='text-sm text-gray-500'>Category: {blog.category}</p>  
-                        <img src={blog.image} alt={blog.title} width={100} height={100} />
-                    </div>
-                ) : (
-                    <p>Blog not found.</p>
-                )
+  return (
+    <section className="min-h-screen bg-gradient-to-br from-zinc-100 via-white to-zinc-200 px-6 py-12 dark:from-zinc-950 dark:via-black dark:to-zinc-900">
+      <div className="mx-auto max-w-4xl">
+        {blog ? (
+          <div className="overflow-hidden rounded-3xl bg-white shadow-2xl dark:bg-zinc-900">
+            <div className="relative h-[350px] w-full">
+              <Image
+                src={blog.image}
+                alt={blog.title}
+                fill
+                className="object-cover"
+              />
+            </div>
 
-            }
+            <div className="p-8 md:p-10">
+              <div className="flex flex-wrap items-center gap-3 text-sm">
+                <span className="rounded-full bg-blue-100 px-4 py-1 font-medium text-blue-600">
+                  {blog.category}
+                </span>
 
-        </div>
-    );
+                <span className="text-zinc-500 dark:text-zinc-400">
+                  {blog.date}
+                </span>
+              </div>
+
+              <h1 className="mt-5 text-4xl font-extrabold text-zinc-900 dark:text-white">
+                {blog.title}
+              </h1>
+
+              <p className="mt-3 text-lg text-zinc-600 dark:text-zinc-400">
+                By {blog.author}
+              </p>
+
+              <div className="mt-8 rounded-2xl bg-zinc-100 p-6 dark:bg-zinc-800">
+                <p className="text-lg leading-8 text-zinc-700 dark:text-zinc-300">
+                  {blog.description}
+                </p>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="rounded-3xl bg-white p-10 text-center shadow-xl dark:bg-zinc-900">
+            <h2 className="text-3xl font-bold text-red-500">
+              Blog Not Found
+            </h2>
+
+            <p className="mt-4 text-zinc-600 dark:text-zinc-400">
+              Sorry, the blog you are looking for does not exist.
+            </p>
+          </div>
+        )}
+      </div>
+    </section>
+  );
 };
 
 export default BlogDetailPage;
