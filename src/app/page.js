@@ -43,7 +43,7 @@ export default function Home() {
           <div className="flex justify-center">
             <div className="relative flex h-[350px] w-[350px] items-center justify-center rounded-full bg-gradient-to-br from-pink-200 via-purple-200 to-blue-200 p-6 shadow-xl dark:from-pink-500/20 dark:via-purple-500/20 dark:to-blue-500/20">
               <Image
-                src="/flower-icon.png"
+                src="/flower.jpg"
                 alt="Flower"
                 width={260}
                 height={260}

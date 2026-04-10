@@ -119,6 +119,16 @@ const Navbar = () => {
           Users
         </Link>
       </li>
+
+      <li>
+        <Link
+          onClick={handleMenuClose}
+          className={navLinkClass('/others')}
+          href="/others"
+        >
+          Others
+        </Link>
+      </li>
     </>
   );
 
