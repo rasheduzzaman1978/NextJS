@@ -41,13 +41,13 @@ export default function Home() {
           </div>
 
           <div className="flex justify-center">
-            <div className="relative flex h-[350px] w-[350px] items-center justify-center rounded-full bg-gradient-to-br from-pink-200 via-purple-200 to-blue-200 p-6 shadow-xl dark:from-pink-500/20 dark:via-purple-500/20 dark:to-blue-500/20">
+            <div className="relative flex h-[250px] w-[250px] md:h-[300px] md:w-[300px] lg:h-[350px] lg:w-[350px] items-center justify-center rounded-full bg-gradient-to-br from-pink-200 via-purple-200 to-blue-200 p-6 shadow-xl dark:from-pink-500/20 dark:via-purple-500/20 dark:to-blue-500/20">
               <Image
                 src="/flower.jpg"
                 alt="Flower"
                 width={260}
                 height={260}
-                className="rounded-3xl object-cover shadow-2xl"
+                className="rounded-3xl object-cover shadow-2xl w-50 h-30 md:w-65 md:h-40"
                 priority
               />
             </div>
