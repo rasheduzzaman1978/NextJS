@@ -120,10 +120,20 @@ const Navbar = () => {
       <li>
         <Link
           onClick={handleMenuClose}
-          className={navLinkClass('/others')}
-          href="/others"
+          className={navLinkClass('/todos')}
+          href="/todos"
         >
-          Others
+          Todos
+        </Link>
+      </li>
+
+      <li>
+        <Link
+          onClick={handleMenuClose}
+          className={navLinkClass('/posts')}
+          href="/posts"
+        >
+          Posts
         </Link>
       </li>
     </>
